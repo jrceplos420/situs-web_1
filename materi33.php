@@ -1,0 +1,62 @@
+<?php
+// Function tanpa parameter
+function hallo() {
+    echo "Halo, selamat datang!";
+}
+
+hallo();
+
+echo "<br>";
+
+// Function dengan parameter
+function tampilNama($nama) {
+    echo "Halo, nama saya $nama";
+}
+
+tampilNama("Sulaiman");
+
+echo "<br>";
+
+// Function dengan return
+function tambah(int $a, int $b) {
+    return $a + $b;
+}
+
+echo tambah(10, 20);
+
+echo "<br>";
+
+// Function dengan logika (ganjil/genap)
+function cekAngka($angka) {
+    if ($angka % 2 == 0) {
+        return "Genap";
+    } else {
+        return "Ganjil";
+    }
+}
+
+echo cekAngka(7);
+
+// TAMBAHAN function kali
+function kali($a, $b) {
+    return $a * $b;
+}
+?>
+
+<form method="POST">
+    <input type="number" name="a">
+    <input type="number" name="b">
+    <input type="submit" value="kirim">
+</form>
+
+<?php
+if (isset($_POST['a']) && isset($_POST['b'])) {
+    $angka1 = $_POST['a'];
+    $angka2 = $_POST['b'];
+
+    echo "<br>";
+    echo tambah($angka1, $angka2);
+    echo "<br>";
+    echo kali($angka1, $angka2);
+}
+?>
