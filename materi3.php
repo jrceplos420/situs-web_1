@@ -39,28 +39,19 @@ echo cekAngka(7);
 ?>
 
 <form method="POST">
-    <input type="number" name="a">
-    <input type="number" name="b">
-    <input type="submit" value="kirim">
+    <input type ="number" name="a">
+    <input type ="number" name="a">
+    <input type ="submit" value="kirim">
 </form>
 
 <?php
 
-function tambah($a, $b) {
-    return $a + $b;
-}
-
-function kali($a, $b) {
-    return $a * $b;
-}
-
-if (isset($_POST['a']) && isset($_POST['b'])) {
+if (isset($POST['a'])&&($POST['b'])) {
     $angka1 = $_POST['a'];
-    $angka2 = $_POST['b'];
-
-    echo "Hasil tambah: " . tambah($angka1, $angka2);
-    echo "<br>";
-    echo "Hasil kali: " . kali($angka1, $angka2);
+    $angka1 = $_POST['b'];
+    echo tambah ($angka1, $angka2);
+    echo"<br>"
+    echo kali ($angka1, $angka2);
 }
 
 ?>

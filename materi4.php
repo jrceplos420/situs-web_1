@@ -57,3 +57,42 @@ if (isset($_GET['id'])) {
 
 ?>
 </table>
+
+//proses
+
+<?php
+
+if(isset($_GET['edit'])) {
+    $id = $_GET['edit'];
+    $query = "SELECT * FROM user WHERE id = $id";
+    $result = mysqli_query($koneksi, $query);
+    $row = mysqli_fetch_assoc($result);
+
+    $username = $row['username'];
+    $password = $row['password'];
+    $nama = $row['nama'];
+    $email = $row['email'];
+}
+
+    echo "<form action='' method='post'>";
+    echo "username : <input type= 'text' name='username' value='$username'><br>";
+    echo "password : <input type= 'password' name='password' value='$password'><br>";
+    echo "nama : <input type= 'text' name='nama' value='$nama'><br>";
+    echo "email : <input type= 'text' name='email' value='$email'><br>";
+    echo "<input type= 'submit' value='kirim data' name='kirim'><br>";
+    echo "</form";
+
+    if(isset($_GET['edit'])) {
+        $username = $row['username'];
+        $password = $row['password'];
+        $nama = $row['nama'];
+        $email = $row['email'];
+
+        $query = "UPDATE user SET username = '$username', = password = '$password', nama = '$nama', email = '$email' WHERE id = $id ";
+
+        if (mysqli_query($koneksi, $query)) {
+            echo "data berhasil diupdate";
+        } else {
+            echo "data gagal diupdate";
+        }
+}
