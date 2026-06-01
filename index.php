@@ -315,6 +315,72 @@ exit;
 </div>
 
 <div class="container">
+    <?php
+
+$total_servis = mysqli_num_rows(
+    mysqli_query($conn, "SELECT * FROM servis")
+);
+
+$total_pendapatan = mysqli_fetch_assoc(
+    mysqli_query($conn, "SELECT SUM(biaya) AS total FROM servis")
+);
+
+?>
+
+<div id="dashboard" class="card">
+
+    <h3>📊 Dashboard Bengkel</h3>
+
+    <div style="
+        display:flex;
+        gap:20px;
+        flex-wrap:wrap;
+    ">
+
+        <div style="
+            flex:1;
+            min-width:220px;
+            background:#0077b6;
+            color:white;
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+        ">
+            <h1><?php echo $total_servis; ?></h1>
+            <p>Total Servis</p>
+        </div>
+
+        <div style="
+            flex:1;
+            min-width:220px;
+            background:#00b4d8;
+            color:white;
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+        ">
+            <h1>
+                Rp <?php echo number_format($total_pendapatan['total']); ?>
+            </h1>
+            <p>Total Pendapatan</p>
+        </div>
+
+        <div style="
+            flex:1;
+            min-width:220px;
+            background:#38b000;
+            color:white;
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+        ">
+            <h1><?php echo date('d'); ?></h1>
+            <p>Tanggal Hari Ini</p>
+        </div>
+
+    </div>
+
+</div>
 
 <div class="card">
 
