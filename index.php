@@ -13,12 +13,30 @@ if (isset($_POST['login'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $level    = $_POST['level'];
 
-    if ($username == "admin" && $password == "111") {
+    if (
+        $username == "admin" &&
+        $password == "111" &&
+        $level == "admin"
+    ) {
 
         $_SESSION['login'] = true;
+        $_SESSION['level'] = "admin";
 
         header("Location: index.php");
+        exit;
+
+    } elseif (
+        $username == "costumer" &&
+        $password == "123" &&
+        $level == "customer"
+    ) {
+
+        $_SESSION['login'] = true;
+        $_SESSION['level'] = "costumer";
+
+        header("Location: costumer.php");
         exit;
 
     } else {
@@ -120,7 +138,7 @@ if (!isset($_SESSION['login'])) {
 
 <div class="login-box">
 
-    <h2>🔧 Login Admin Bengkel</h2>
+    <h2>🔧 Login Bengkel</h2>
 
     <?php if(isset($error)){ ?>
         <div class="error">
@@ -130,11 +148,29 @@ if (!isset($_SESSION['login'])) {
 
     <form method="POST">
 
-        <input type="text" name="username"
-        placeholder="Masukkan Username" required>
+        <input type="text"
+        name="username"
+        placeholder="Masukkan Username"
+        required>
 
-        <input type="password" name="password"
-        placeholder="Masukkan Password" required>
+        <input type="password"
+        name="password"
+        placeholder="Masukkan Password"
+        required>
+
+        <select name="level" required
+        style="
+        width:100%;
+        padding:14px;
+        margin-top:15px;
+        border:1px solid #ccc;
+        border-radius:10px;
+        font-size:15px;
+        ">
+            <option value="">-- Pilih Login --</option>
+            <option value="admin">Admin</option>
+            <option value="customer">Customer</option>
+        </select>
 
         <button type="submit" name="login">
             LOGIN
@@ -306,7 +342,7 @@ exit;
 
 <div class="navbar">
 
-    <h2>🔧 Sistem Servis Bengkel</h2>
+    <h2>🔧 Operator Bengkel</h2>
 
     <a class="logout" href="index.php?logout=true">
         Logout
@@ -315,6 +351,8 @@ exit;
 </div>
 
 <div class="container">
+
+<div class="card">
     <?php
 
 $total_servis = mysqli_num_rows(
@@ -325,9 +363,17 @@ $total_pendapatan = mysqli_fetch_assoc(
     mysqli_query($conn, "SELECT SUM(biaya) AS total FROM servis")
 );
 
+$total_pelanggan = mysqli_num_rows(
+    mysqli_query($conn, "SELECT DISTINCT nama_pelanggan FROM servis")
+);
+
+$total_kendaraan = mysqli_num_rows(
+    mysqli_query($conn, "SELECT DISTINCT kendaraan FROM servis")
+);
+
 ?>
 
-<div id="dashboard" class="card">
+<div class="card">
 
     <h3>📊 Dashboard Bengkel</h3>
 
@@ -335,8 +381,10 @@ $total_pendapatan = mysqli_fetch_assoc(
         display:flex;
         gap:20px;
         flex-wrap:wrap;
+        margin-top:20px;
     ">
 
+        <!-- Total Servis -->
         <div style="
             flex:1;
             min-width:220px;
@@ -350,6 +398,7 @@ $total_pendapatan = mysqli_fetch_assoc(
             <p>Total Servis</p>
         </div>
 
+        <!-- Total Pendapatan -->
         <div style="
             flex:1;
             min-width:220px;
@@ -365,6 +414,7 @@ $total_pendapatan = mysqli_fetch_assoc(
             <p>Total Pendapatan</p>
         </div>
 
+        <!-- Total Pelanggan -->
         <div style="
             flex:1;
             min-width:220px;
@@ -374,15 +424,27 @@ $total_pendapatan = mysqli_fetch_assoc(
             border-radius:15px;
             text-align:center;
         ">
-            <h1><?php echo date('d'); ?></h1>
-            <p>Tanggal Hari Ini</p>
+            <h1><?php echo $total_pelanggan; ?></h1>
+            <p>Total Pelanggan</p>
+        </div>
+
+        <!-- Total Kendaraan -->
+        <div style="
+            flex:1;
+            min-width:220px;
+            background:#ff8800;
+            color:white;
+            padding:25px;
+            border-radius:15px;
+            text-align:center;
+        ">
+            <h1><?php echo $total_kendaraan; ?></h1>
+            <p>Jenis Kendaraan</p>
         </div>
 
     </div>
 
 </div>
-
-<div class="card">
 
 <h3>📋 Form Data Servis</h3>
 
@@ -397,10 +459,13 @@ if (isset($_POST['tambah'])) {
     $keluhan = $_POST['keluhan'];
     $biaya = $_POST['biaya'];
 
-    mysqli_query($conn, "INSERT INTO servis 
-    VALUES('', '$nama', '$kendaraan', '$keluhan', '$biaya')");
+    mysqli_query($conn, "INSERT INTO servis
+VALUES('', '$nama', '$kendaraan', '$keluhan', '$biaya')");
 
-    header("Location: index.php");
+echo "<script>
+window.location='index.php';
+</script>";
+exit;
 }
 
 /* ================= HAPUS DATA ================= */
@@ -411,7 +476,10 @@ if (isset($_GET['hapus'])) {
 
     mysqli_query($conn, "DELETE FROM servis WHERE id='$id'");
 
-    header("Location: index.php");
+echo "<script>
+window.location='index.php';
+</script>";
+exit;
 }
 
 /* ================= UPDATE DATA ================= */
@@ -432,7 +500,10 @@ if (isset($_POST['update'])) {
         WHERE id='$id'
     ");
 
-    header("Location: index.php");
+    echo "<script>
+window.location='index.php';
+</script>";
+exit;
 }
 
 /* ================= FORM EDIT ================= */
