@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$conn = mysqli_connect("localhost", "root", "", "bengkel_db");
+$conn = mysqli_connect("localhost", "root", "", "bengkell_db");
 
 if (!$conn) {
     die("Koneksi gagal");
@@ -28,15 +28,15 @@ if (isset($_POST['login'])) {
         exit;
 
     } elseif (
-        $username == "costumer" &&
+        $username == "customer" &&
         $password == "123" &&
         $level == "customer"
     ) {
 
         $_SESSION['login'] = true;
-        $_SESSION['level'] = "costumer";
+        $_SESSION['level'] = "customer";
 
-        header("Location: costumer.php");
+        header("Location: customer.php");
         exit;
 
     } else {
@@ -580,8 +580,9 @@ if(isset($_GET['edit'])){
     <th>No</th>
     <th>Nama Pelanggan</th>
     <th>Kendaraan</th>
-    <th>Keluhan</th>
+    <th>Jadwal/Keluhan</th>
     <th>Biaya</th>
+    <th>Status</th>
     <th>Aksi</th>
 </tr>
 
@@ -606,12 +607,16 @@ while($d = mysqli_fetch_array($data)){
     <td><?php echo $d['keluhan']; ?></td>
 
     <td>
-        Rp <?php echo number_format($d['biaya']); ?>
-    </td>
+    Rp <?php echo number_format($d['biaya']); ?>
+</td>
 
-    <td>
+<td>
+    <?php echo $d['status']; ?>
+</td>
 
-        <a class="edit"
+<td>
+
+    <a class="edit"
         href="index.php?edit=<?php echo $d['id']; ?>">
             Edit
         </a>
