@@ -238,6 +238,18 @@ exit;
             margin: 30px auto;
         }
 
+        .hero-admin{
+    background:linear-gradient(135deg,#0077b6,#00b4d8);
+    color:white;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.hero-admin h1{
+    margin-bottom:10px;
+}
+
         .card{
             background: white;
             padding: 25px;
@@ -344,13 +356,32 @@ exit;
 
     <h2>🔧 Operator Bengkel</h2>
 
-    <a class="logout" href="index.php?logout=true">
-        Logout
-    </a>
+    <div style="display:flex;align-items:center;gap:15px;">
+
+        <img src="1.jpg"
+        style="width:45px;height:45px;border-radius:50%;">
+
+        <a class="logout"
+        href="index.php?logout=true">
+            Logout
+        </a>
+
+    </div>
 
 </div>
 
 <div class="container">
+
+<div class="hero-admin">
+
+    <h1>👋 Selamat Datang Admin</h1>
+
+    <p>
+        Kelola data servis, booking pelanggan,
+        dan laporan bengkel dengan mudah.
+    </p>
+
+</div>
 
 <div class="card">
     <?php
