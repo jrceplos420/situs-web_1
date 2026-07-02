@@ -533,7 +533,7 @@ if(!isset($_SESSION['login']) || $_SESSION['level'] != 'customer'){
 
     <p style="margin-top:15px; line-height:1.8; text-align:justify;">
 
-        KENGGEMOTI Racing Team adalah bengkel motor yang menyediakan berbagai
+        KENGGEMOTI Racing Team (KRT) adalah bengkel motor yang menyediakan berbagai
         layanan perawatan dan perbaikan kendaraan roda dua. Kami melayani
         servis mesin, ganti oli, servis CVT, tambal ban, hingga modifikasi
         dan peningkatan performa motor (bore up/naik CC).
@@ -639,7 +639,7 @@ if(!isset($_SESSION['login']) || $_SESSION['level'] != 'customer'){
 
         <p>📞 082234813822</p>
         <p>💬 082234813822</p>
-        <p>📧 kenggemotiracingteam@gmail.com</p>
+        <p>📧 jrceplos420@gmail.com</p>
 
     </div>
 
@@ -681,10 +681,9 @@ if(!isset($_SESSION['login']) || $_SESSION['level'] != 'customer'){
 
 </div>
 
-<div class="copyright">
+<div class="copyright"> 
     © 2025 KENGGEMOTI Racing Team
 </div>
 
 </body>
 </html>
-
