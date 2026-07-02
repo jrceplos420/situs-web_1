@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 session_start();
 
 $conn = mysqli_connect("localhost", "root", "", "bengkell_db");
@@ -196,156 +198,305 @@ exit;
     <style>
 
         *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial;
-        }
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
 
-        body{
-            background: #f1f5f9;
-        }
+body{
+    background:#f1f5f9;
+}
 
-        .navbar{
-            background: linear-gradient(135deg, #0077b6, #00b4d8);
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+/* ================= NAVBAR ================= */
 
-        .navbar h2{
-            font-size: 28px;
-        }
+.navbar{
+    background:linear-gradient(135deg,#0077b6,#00b4d8);
+    padding:20px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
 
-        .logout{
-            background: red;
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
+.navbar h2{
+    font-size:32px;
+}
 
-        .logout:hover{
-            background: darkred;
-        }
+.logout{
+    background:red;
+    color:white;
+    padding:10px 18px;
+    border-radius:10px;
+    text-decoration:none;
+    transition:.3s;
+}
 
-        .container{
-            width: 95%;
-            margin: 30px auto;
-        }
+.logout:hover{
+    background:#b60000;
+}
 
-        .hero-admin{
+/* ================= MENU ================= */
+
+.menu-admin{
+    background:white;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.menu-admin a{
+    text-decoration:none;
+    color:#0077b6;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.menu-admin a:hover{
+    color:#ff9800;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:95%;
+    margin:30px auto;
+}
+
+/* ================= HERO ================= */
+
+.hero-admin{
     background:linear-gradient(135deg,#0077b6,#00b4d8);
     color:white;
-    padding:30px;
+    padding:35px;
     border-radius:20px;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .hero-admin h1{
     margin-bottom:10px;
+    font-size:40px;
 }
 
-        .card{
-            background: white;
-            padding: 25px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
-        }
+/* ================= CARD ================= */
 
-        .card h3{
-            color: #0077b6;
-            margin-bottom: 20px;
-        }
+.card{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
 
-        form input,
-        form textarea{
-            width: 100%;
-            padding: 14px;
-            margin-top: 15px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            font-size: 15px;
-        }
+.card h3{
+    color:#0077b6;
+    margin-bottom:20px;
+}
 
-        textarea{
-            resize: none;
-            height: 100px;
-        }
+/* ================= FORM ================= */
 
-        .btn{
-            background: #0077b6;
-            color: white;
-            border: none;
-            padding: 14px;
-            width: 100%;
-            margin-top: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-        }
+form input,
+form textarea{
+    width:100%;
+    padding:14px;
+    margin-top:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+}
 
-        .btn:hover{
-            background: #023e8a;
-        }
+textarea{
+    resize:none;
+    height:120px;
+}
 
-        table{
-            width: 100%;
-            border-collapse: collapse;
-            overflow: hidden;
-            border-radius: 15px;
-        }
+.btn{
+    width:100%;
+    background:#0077b6;
+    color:white;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    margin-top:20px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
 
-        table th{
-            background: #0077b6;
-            color: white;
-            padding: 15px;
-        }
+.btn:hover{
+    background:#023e8a;
+}
 
-        table td{
-            padding: 14px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
+/* ================= DASHBOARD ================= */
 
-        table tr:hover{
-            background: #f1faff;
-        }
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
 
-        .edit{
-            background: orange;
-            color: white;
-            padding: 8px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-        }
+.box{
+    flex:1;
+    min-width:220px;
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
 
-        .hapus{
-            background: red;
-            color: white;
-            padding: 8px 14px;
-            border-radius: 8px;
-            text-decoration: none;
-        }
+.box:hover{
+    transform:translateY(-8px);
+}
 
-        .edit:hover{
-            background: darkorange;
-        }
+.box h2{
+    font-size:42px;
+    color:#0077b6;
+}
 
-        .hapus:hover{
-            background: darkred;
-        }
+.box p{
+    margin-top:10px;
+    font-size:18px;
+}
 
-        .title{
-            margin-bottom: 20px;
-            color: #023e8a;
-        }
+/* ================= TABLE ================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+table th{
+    background:#0077b6;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+table tr:hover{
+    background:#f3faff;
+}
+
+/* ================= BUTTON ================= */
+
+.edit,
+.hapus,
+.selesai,
+.verifikasi{
+    color:white;
+    padding:8px 14px;
+    border-radius:8px;
+    text-decoration:none;
+    transition:.3s;
+    display:inline-block;
+    margin:2px;
+}
+
+.edit{
+    background:#ff9800;
+}
+
+.edit:hover{
+    background:#e68900;
+}
+
+.hapus{
+    background:#f44336;
+}
+
+.hapus:hover{
+    background:#c62828;
+}
+
+.selesai{
+    background:#28a745;
+}
+
+.selesai:hover{
+    background:#1f8b39;
+}
+
+.verifikasi{
+    background:#6f42c1;
+}
+
+.verifikasi:hover{
+    background:#5a32a3;
+}
+
+/* ================= STATUS ================= */
+
+.booking{
+    background:#ff9800;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+.proses{
+    background:#2196f3;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+.selesai-status{
+    background:#28a745;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .menu-admin{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .cards{
+        flex-direction:column;
+    }
+
+    table{
+        font-size:13px;
+    }
+}
+
+.proses{
+    background:#2196f3;
+    color:white;
+    padding:8px 14px;
+    border-radius:8px;
+    text-decoration:none;
+    margin-left:5px;
+}
+
+.proses-status{
+    background:#2196f3;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+}
 
     </style>
 
@@ -353,6 +504,18 @@ exit;
 <body>
 
 <div class="navbar">
+
+<div class="menu-admin">
+
+    <a href="#dashboard">🏠 Dashboard</a>
+
+    <a href="#form">➕ Tambah Servis</a>
+
+    <a href="#data">📋 Data Servis</a>
+
+    <a href="#laporan">📊 Laporan</a>
+
+</div>
 
     <h2>🔧 Operator Bengkel</h2>
 
@@ -370,7 +533,7 @@ exit;
 
 </div>
 
-<div class="container">
+<div class="container" id="dashboard">
 
 <div class="hero-admin">
 
@@ -477,7 +640,11 @@ $total_kendaraan = mysqli_num_rows(
 
 </div>
 
+<div id="form">
+
 <h3>📋 Form Data Servis</h3>
+
+</div>
 
 <?php
 
@@ -490,14 +657,65 @@ if (isset($_POST['tambah'])) {
     $keluhan = $_POST['keluhan'];
     $biaya = $_POST['biaya'];
 
-    mysqli_query($conn, "INSERT INTO servis
-VALUES('', '$nama', '$kendaraan', '$keluhan', '$biaya')");
+    mysqli_query($conn,"
+INSERT INTO servis
+(nama_pelanggan,kendaraan,keluhan,biaya,status,status_pembayaran)
+
+VALUES
+(
+'$nama',
+'$kendaraan',
+'$keluhan',
+'$biaya',
+'Booking',
+'Belum Bayar'
+)
+");
 
 echo "<script>
 window.location='index.php';
 </script>";
 exit;
 }
+
+/* ================= PROSES SERVIS ================= */
+
+if(isset($_GET['proses'])){
+
+    $id = $_GET['proses'];
+
+    mysqli_query($conn,"
+    UPDATE servis
+    SET status='Proses'
+    WHERE id='$id'
+    ");
+
+    echo "<script>
+    alert('Servis sedang dikerjakan');
+    window.location='index.php';
+    </script>";
+    exit;
+}
+
+/* ================= SELESAI SERVIS ================= */
+
+if(isset($_GET['selesai'])){
+
+    $id = $_GET['selesai'];
+
+    mysqli_query($conn,"
+    UPDATE servis
+    SET status='Selesai'
+    WHERE id='$id'
+    ");
+
+    echo "<script>
+    alert('Servis berhasil diselesaikan');
+    window.location='index.php';
+    </script>";
+    exit;
+}
+
 
 /* ================= HAPUS DATA ================= */
 
@@ -603,7 +821,11 @@ if(isset($_GET['edit'])){
 
 <div class="card">
 
-<h3 class="title">📑 Data Servis Kendaraan</h3>
+<div id="data">
+
+<h3>📑 Data Servis Kendaraan</h3>
+
+</div>
 
 <table>
 
@@ -614,6 +836,7 @@ if(isset($_GET['edit'])){
     <th>Jadwal/Keluhan</th>
     <th>Biaya</th>
     <th>Status</th>
+    <th>Pembayaran</th>
     <th>Aksi</th>
 </tr>
 
@@ -642,28 +865,118 @@ while($d = mysqli_fetch_array($data)){
 </td>
 
 <td>
-    <?php echo $d['status']; ?>
+
+<?php
+
+if($d['status']=="Booking"){
+    echo "<span class='booking'>Booking</span>";
+}
+elseif($d['status']=="Proses"){
+    echo "<span class='proses-status'>Proses</span>";
+}
+elseif($d['status']=="Selesai"){
+    echo "<span class='selesai-status'>Selesai</span>";
+}
+
+?>
+
+</td>
+
+<td>
+
+<?php
+echo $d['status_pembayaran'];
+
+if(
+    $d['status']=="Selesai" &&
+    $d['status_pembayaran']=="Belum Bayar"
+){
+?>
+
+<br><br>
+
+<a class="proses"
+href="pembayaran.php?id=<?=$d['id'];?>">
+Bayar
+</a>
+
+<?php } ?>
+
 </td>
 
 <td>
 
     <a class="edit"
-        href="index.php?edit=<?php echo $d['id']; ?>">
-            Edit
+    href="index.php?edit=<?php echo $d['id']; ?>">
+        Edit
+    </a>
+
+    <a class="hapus"
+    href="index.php?hapus=<?php echo $d['id']; ?>">
+        Hapus
+    </a>
+
+    <?php
+if($d['status']=="Booking"){
+?>
+
+<a class="proses"
+href="index.php?proses=<?=$d['id'];?>">
+Proses
+</a>
+
+<?php } ?>
+
+    <?php
+if($d['status']=="Proses"){
+?>
+
+<a class="selesai"
+href="index.php?selesai=<?=$d['id'];?>">
+Selesai
+</a>
+
+<?php } ?>
+
+    <?php
+    if($d['status_pembayaran'] == "Menunggu Verifikasi"){
+    ?>
+        <a class="verifikasi"
+        href="verifikasi.php?id=<?php echo $d['id']; ?>">
+            Verifikasi
         </a>
+    <?php } ?>
 
-        <a class="hapus"
-        href="index.php?hapus=<?php echo $d['id']; ?>">
-            Hapus
-        </a>
-
-    </td>
-
-</tr>
+</td>
 
 <?php } ?>
 
 </table>
+
+</div>
+
+</div>
+
+<div class="container" id="laporan">
+
+<h3>📊 Laporan Hari Ini</h3>
+
+<div class="cards">
+
+<div class="box">
+<h2><?php echo mysqli_num_rows(mysqli_query($conn,"SELECT * FROM servis WHERE status='Booking'")); ?></h2>
+<p>Booking</p>
+</div>
+
+<div class="box">
+<h2><?php echo mysqli_num_rows(mysqli_query($conn,"SELECT * FROM servis WHERE status='Proses'")); ?></h2>
+<p>Proses</p>
+</div>
+
+<div class="box">
+<h2><?php echo mysqli_num_rows(mysqli_query($conn,"SELECT * FROM servis WHERE status='Selesai'")); ?></h2>
+<p>Selesai</p>
+</div>
 
 </div>
 
