@@ -211,8 +211,8 @@ body{
 /* ================= NAVBAR ================= */
 
 .navbar{
-    background:linear-gradient(135deg,#0077b6,#00b4d8);
-    padding:20px 40px;
+    background: linear-gradient(135deg,#0077b6,#00b4d8);
+    padding:18px 40px;
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -240,23 +240,23 @@ body{
 /* ================= MENU ================= */
 
 .menu-admin{
-    background:white;
     display:flex;
-    justify-content:center;
+    align-items:center;
     gap:30px;
-    padding:15px;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    background:none;
+    box-shadow:none;
+    padding:0;
 }
 
 .menu-admin a{
+    color:white;
     text-decoration:none;
-    color:#0077b6;
     font-weight:bold;
     transition:.3s;
 }
 
 .menu-admin a:hover{
-    color:#ff9800;
+    color:#ffd166;
 }
 
 /* ================= CONTAINER ================= */
@@ -505,20 +505,23 @@ table tr:hover{
 
 <div class="navbar">
 
-<div class="menu-admin">
-
-    <a href="#dashboard">🏠 Dashboard</a>
-
-    <a href="#form">➕ Tambah Servis</a>
-
-    <a href="#data">📋 Data Servis</a>
-
-    <a href="#laporan">📊 Laporan</a>
-
-</div>
-
+    <!-- Operator Bengkel pindah ke kiri -->
     <h2>🔧 Operator Bengkel</h2>
 
+    <!-- Menu pindah ke tengah -->
+    <div class="menu-admin">
+
+        <a href="#dashboard">🏠 Dashboard</a>
+
+        <a href="#form">➕ Tambah Servis</a>
+
+        <a href="#data">📋 Data Servis</a>
+
+        <a href="#laporan">📊 Laporan</a>
+
+    </div>
+
+    <!-- Foto dan Logout tetap di kanan -->
     <div style="display:flex;align-items:center;gap:15px;">
 
         <img src="1.jpg"
