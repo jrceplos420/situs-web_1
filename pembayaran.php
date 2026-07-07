@@ -1,12 +1,12 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","bengkell_db");
+$conn = mysqli_connect("localhost", "root", "", "bengkell_db");
 
 $id = $_GET['id'];
 
-$data = mysqli_fetch_array(mysqli_query($conn,"SELECT * FROM servis WHERE id='$id'"));
+$data = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM servis WHERE id='$id'"));
 
-if(isset($_POST['bayar'])){
+if (isset($_POST['bayar'])) {
 
     $metode = $_POST['metode'];
 
@@ -15,14 +15,14 @@ if(isset($_POST['bayar'])){
     $tmp = $_FILES['bukti']['tmp_name'];
 
     // Membuat folder bukti jika belum ada
-    if(!is_dir("bukti")){
+    if (!is_dir("bukti")) {
         mkdir("bukti", 0777, true);
     }
 
     // Upload file
-    if(move_uploaded_file($tmp, "bukti/".$gambar)){
+    if (move_uploaded_file($tmp, "bukti/" . $gambar)) {
 
-        $query = mysqli_query($conn,"
+        $query = mysqli_query($conn, "
         UPDATE servis SET
         metode_pembayaran='$metode',
         bukti_pembayaran='$gambar',
@@ -30,22 +30,19 @@ if(isset($_POST['bayar'])){
         WHERE id='$id'
         ");
 
-        if($query){
+        if ($query) {
             echo "<script>
             alert('Pembayaran berhasil dikirim');
             location='customer.php';
             </script>";
             exit;
-        }else{
-            die("Query Error : ".mysqli_error($conn));
+        } else {
+            die("Query Error : " . mysqli_error($conn));
         }
-
-    }else{
+    } else {
 
         echo "Upload bukti pembayaran gagal.";
-
     }
-
 }
 
 ?>
@@ -55,461 +52,459 @@ if(isset($_POST['bayar'])){
 
 <head>
 
-<title>Pembayaran Servis</title>
+    <title>Pembayaran Servis</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
+        body {
+            background: #eef3fa;
+        }
 
-body{
-background:#eef3fa;
-}
+        .navbar {
 
-.navbar{
+            background: linear-gradient(90deg, #0052cc, #1e88e5);
 
-background:linear-gradient(90deg,#0052cc,#1e88e5);
+            padding: 18px 40px;
 
-padding:18px 40px;
+            display: flex;
 
-display:flex;
+            justify-content: space-between;
 
-justify-content:space-between;
+            color: white;
 
-color:white;
+            align-items: center;
 
-align-items:center;
+        }
 
-}
+        .navbar a {
 
-.navbar a{
+            color: white;
 
-color:white;
+            text-decoration: none;
 
-text-decoration:none;
+            font-weight: bold;
 
-font-weight:bold;
+        }
 
-}
+        .container {
 
-.container{
+            width: 1200px;
 
-width:1200px;
+            margin: 35px auto;
 
-margin:35px auto;
+        }
 
-}
+        .judul {
 
-.judul{
+            text-align: center;
 
-text-align:center;
+            margin-bottom: 30px;
 
-margin-bottom:30px;
+        }
 
-}
+        .judul h1 {
 
-.judul h1{
+            font-size: 45px;
 
-font-size:45px;
+            color: #23344d;
 
-color:#23344d;
+        }
 
-}
+        .judul p {
 
-.judul p{
+            margin-top: 10px;
 
-margin-top:10px;
+            font-size: 20px;
 
-font-size:20px;
+            color: #666;
 
-color:#666;
+        }
 
-}
+        .flex {
 
-.flex{
+            display: flex;
 
-display:flex;
+            gap: 25px;
 
-gap:25px;
+        }
 
-}
+        .left {
 
-.left{
+            flex: 2;
 
-flex:2;
+            background: white;
 
-background:white;
+            padding: 30px;
 
-padding:30px;
+            border-radius: 18px;
 
-border-radius:18px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
 
-box-shadow:0 10px 20px rgba(0,0,0,.1);
+        }
 
-}
+        .right {
 
-.right{
+            flex: 1;
 
-flex:1;
+            background: white;
 
-background:white;
+            padding: 25px;
 
-padding:25px;
+            border-radius: 18px;
 
-border-radius:18px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
 
-box-shadow:0 10px 20px rgba(0,0,0,.1);
+        }
 
-}
+        .section {
 
-.section{
+            font-size: 28px;
 
-font-size:28px;
+            margin-bottom: 25px;
 
-margin-bottom:25px;
+            color: #1565c0;
 
-color:#1565c0;
+            font-weight: bold;
 
-font-weight:bold;
+        }
 
-}
+        .detail {
 
-.detail{
+            display: flex;
 
-display:flex;
+            justify-content: space-between;
 
-justify-content:space-between;
+            padding: 18px 0;
 
-padding:18px 0;
+            border-bottom: 1px solid #eee;
 
-border-bottom:1px solid #eee;
+            font-size: 18px;
 
-font-size:18px;
+        }
 
-}
+        .detail b {
 
-.detail b{
+            color: #1565c0;
 
-color:#1565c0;
+        }
 
-}
+        select,
+        input[type=file] {
 
-select,input[type=file]{
+            width: 100%;
 
-width:100%;
+            padding: 14px;
 
-padding:14px;
+            margin-top: 18px;
 
-margin-top:18px;
+            border-radius: 10px;
 
-border-radius:10px;
+            border: 1px solid #ccc;
 
-border:1px solid #ccc;
+            font-size: 15px;
 
-font-size:15px;
+        }
 
-}
+        .info {
 
-.info{
+            background: #edf5ff;
 
-background:#edf5ff;
+            padding: 18px;
 
-padding:18px;
+            border-radius: 12px;
 
-border-radius:12px;
+            margin-top: 20px;
 
-margin-top:20px;
+            line-height: 30px;
 
-line-height:30px;
+        }
 
-}
+        button {
 
-button{
+            width: 100%;
 
-width:100%;
+            margin-top: 25px;
 
-margin-top:25px;
+            padding: 16px;
 
-padding:16px;
+            background: #1565c0;
 
-background:#1565c0;
+            color: white;
 
-color:white;
+            border: none;
 
-border:none;
+            font-size: 18px;
 
-font-size:18px;
+            border-radius: 10px;
 
-border-radius:10px;
+            cursor: pointer;
 
-cursor:pointer;
+        }
 
-}
+        button:hover {
 
-button:hover{
+            background: #0d47a1;
 
-background:#0d47a1;
+        }
 
-}
+        .qr {
 
-.qr{
+            text-align: center;
 
-text-align:center;
+        }
 
-}
+        .qr img {
 
-.qr img{
+            width: 260px;
 
-width:260px;
+            margin-top: 20px;
 
-margin-top:20px;
+            border: 1px solid #ddd;
 
-border:1px solid #ddd;
+            padding: 10px;
 
-padding:10px;
+            border-radius: 10px;
 
-border-radius:10px;
+        }
 
-}
+        .total {
 
-.total{
+            background: #eef6ff;
 
-background:#eef6ff;
+            margin-top: 30px;
 
-margin-top:30px;
+            padding: 20px;
 
-padding:20px;
+            border-radius: 10px;
 
-border-radius:10px;
+            text-align: center;
 
-text-align:center;
+        }
 
-}
+        .total h2 {
 
-.total h2{
+            color: #1565c0;
 
-color:#1565c0;
+            font-size: 36px;
 
-font-size:36px;
+            margin-top: 10px;
 
-margin-top:10px;
+        }
 
-}
+        .peringatan {
 
-.peringatan{
+            margin-top: 20px;
 
-margin-top:20px;
+            background: #fff5e6;
 
-background:#fff5e6;
+            padding: 18px;
 
-padding:18px;
+            border-radius: 10px;
 
-border-radius:10px;
+            color: #8a5b00;
 
-color:#8a5b00;
-
-}
-
-</style>
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="navbar">
+    <div class="navbar">
 
-<h2><i class="fa-solid fa-gears"></i> BENGKEL MODERN</h2>
+        <h2><i class="fa-solid fa-gears"></i> BENGKEL MODERN</h2>
 
-<a href="customer.php">
+        <a href="customer.php">
 
-<i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-house"></i>
 
-Kembali
+            Kembali
 
-</a>
+        </a>
 
-</div>
+    </div>
 
-<div class="container">
+    <div class="container">
 
-<div class="judul">
+        <div class="judul">
 
-<h1>Pembayaran Servis</h1>
+            <h1>Pembayaran Servis</h1>
 
-<p>
+            <p>
 
-Silahkan lakukan pembayaran sesuai total biaya servis
+                Silahkan lakukan pembayaran sesuai total biaya servis
 
-</p>
+            </p>
 
-</div>
+        </div>
 
-<form method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
 
-<div class="flex">
+            <div class="flex">
 
-<div class="left">
+                <div class="left">
 
-<div class="section">
+                    <div class="section">
 
-<i class="fa-solid fa-clipboard-list"></i>
+                        <i class="fa-solid fa-clipboard-list"></i>
 
-Detail Servis
+                        Detail Servis
 
-</div>
+                    </div>
 
-<div class="detail">
+                    <div class="detail">
 
-<span>Nama Pelanggan</span>
+                        <span>Nama Pelanggan</span>
 
-<b><?= $data['nama_pelanggan']; ?></b>
+                        <b><?= $data['nama_pelanggan']; ?></b>
 
-</div>
+                    </div>
 
-<div class="detail">
+                    <div class="detail">
 
-<span>Kendaraan</span>
+                        <span>Kendaraan</span>
 
-<b><?= $data['kendaraan']; ?></b>
+                        <b><?= $data['kendaraan']; ?></b>
 
-</div>
+                    </div>
 
-<div class="detail">
+                    <div class="detail">
 
-<span>Total Biaya</span>
+                        <span>Total Biaya</span>
 
-<b>
+                        <b>
 
-Rp <?= number_format($data['biaya']); ?>
+                            Rp <?= number_format($data['biaya']); ?>
 
-</b>
+                        </b>
 
-</div>
+                    </div>
 
-<br>
+                    <br>
 
-<h3>Metode Pembayaran</h3>
+                    <h3>Metode Pembayaran</h3>
 
-<select name="metode" id="metode">
+                    <select name="metode" id="metode">
 
-<option value="QRIS">QRIS</option>
+                        <option value="QRIS">QRIS</option>
 
-<option value="Transfer BCA">Transfer BCA</option>
+                        <option value="Transfer BCA">Transfer BCA</option>
 
-<option value="Transfer BRI">Transfer BRI</option>
+                        <option value="Transfer BRI">Transfer BRI</option>
 
-<option value="Transfer BNI">Transfer BNI</option>
+                        <option value="Transfer BNI">Transfer BNI</option>
 
-<option value="Transfer Mandiri">Transfer Mandiri</option>
+                        <option value="Transfer Mandiri">Transfer Mandiri</option>
 
-</select>
+                    </select>
 
-<div class="info" id="info">
+                    <div class="info" id="info">
 
-<b>Cara Pembayaran</b>
+                        <b>Cara Pembayaran</b>
 
-<ol style="margin-left:20px;margin-top:10px;">
+                        <ol style="margin-left:20px;margin-top:10px;">
 
-<li>Scan QR Code.</li>
+                            <li>Scan QR Code.</li>
 
-<li>Bayar sesuai nominal.</li>
+                            <li>Bayar sesuai nominal.</li>
 
-<li>Upload bukti pembayaran.</li>
+                            <li>Upload bukti pembayaran.</li>
 
-<li>Klik Kirim Pembayaran.</li>
+                            <li>Klik Kirim Pembayaran.</li>
 
-</ol>
+                        </ol>
 
-</div>
+                    </div>
 
-<h3 style="margin-top:25px;">
+                    <h3 style="margin-top:25px;">
 
-Upload Bukti Pembayaran
+                        Upload Bukti Pembayaran
 
-</h3>
+                    </h3>
 
-<input type="file" name="bukti" required>
+                    <input type="file" name="bukti" required>
 
-<button name="bayar">
+                    <button name="bayar">
 
-<i class="fa-solid fa-paper-plane"></i>
+                        <i class="fa-solid fa-paper-plane"></i>
 
-Kirim Pembayaran
+                        Kirim Pembayaran
 
-</button>
+                    </button>
 
-</div>
+                </div>
 
-<div class="right">
+                <div class="right">
 
-<div class="section">
+                    <div class="section">
 
-<i class="fa-solid fa-qrcode"></i>
+                        <i class="fa-solid fa-qrcode"></i>
 
-Pembayaran
+                        Pembayaran
 
-</div>
+                    </div>
 
-<div class="qr" id="gambar">
+                    <div class="qr" id="gambar">
 
-<img src="gambar/qris.png">
+                        <img src="gambar/qris.png">
 
-</div>
+                    </div>
 
-<div class="total">
+                    <div class="total">
 
-<p>Total Pembayaran</p>
+                        <p>Total Pembayaran</p>
 
-<h2>
+                        <h2>
 
-Rp <?= number_format($data['biaya']); ?>
+                            Rp <?= number_format($data['biaya']); ?>
 
-</h2>
+                        </h2>
 
-</div>
+                    </div>
 
-<div class="peringatan">
+                    <div class="peringatan">
 
-<b>Perhatian</b>
+                        <b>Perhatian</b>
 
-<p style="margin-top:10px">
+                        <p style="margin-top:10px">
 
-Pastikan nominal pembayaran sesuai.
+                            Pastikan nominal pembayaran sesuai.
 
-</p>
+                        </p>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</form>
+        </form>
 
-</div>
+    </div>
 
-<script>
+    <script>
+        let metode = document.getElementById("metode");
 
-let metode=document.getElementById("metode");
+        let gambar = document.getElementById("gambar");
 
-let gambar=document.getElementById("gambar");
+        let info = document.getElementById("info");
 
-let info=document.getElementById("info");
+        metode.onchange = function() {
 
-metode.onchange=function(){
+            if (this.value == "QRIS") {
 
-if(this.value=="QRIS"){
+                gambar.innerHTML = '<img src="gambar/qris.png">';
 
-gambar.innerHTML='<img src="gambar/qris.png">';
-
-info.innerHTML=`
+                info.innerHTML = `
 <b>Cara Pembayaran QRIS</b>
 <ol style="margin-left:20px;margin-top:10px;">
 <li>Scan QR Code.</li>
@@ -517,26 +512,26 @@ info.innerHTML=`
 <li>Upload bukti pembayaran.</li>
 </ol>`;
 
-}else{
+            } else {
 
-gambar.innerHTML=`
+                gambar.innerHTML = `
 <h3>No Rekening</h3>
 <h2>1234567890</h2>
 <p>a.n Bengkel Modern</p>
 `;
 
-info.innerHTML=`
+                info.innerHTML = `
 <b>Transfer Bank</b>
 <ol style="margin-left:20px;margin-top:10px;">
 <li>Transfer sesuai nominal.</li>
 <li>Simpan bukti transfer.</li>
 <li>Upload bukti pembayaran.</li>
 </ol>`;
-}
+            }
 
-}
-
-</script>
+        }
+    </script>
 
 </body>
+
 </html>

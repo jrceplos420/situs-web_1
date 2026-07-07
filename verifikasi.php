@@ -1,15 +1,15 @@
 <?php
-$conn = mysqli_connect("localhost","root","","bengkell_db");
+$conn = mysqli_connect("localhost", "root", "", "bengkell_db");
 
-if(!$conn){
+if (!$conn) {
     die("Koneksi gagal");
 }
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
 
     $id = $_GET['id'];
 
-    mysqli_query($conn,"
+    mysqli_query($conn, "
     UPDATE servis
     SET status_pembayaran='Lunas'
     WHERE id='$id'
@@ -17,7 +17,6 @@ if(isset($_GET['id'])){
 
     header("Location: index.php");
     exit;
-}else{
+} else {
     echo "ID tidak ditemukan";
 }
-?>
