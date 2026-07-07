@@ -1,19 +1,23 @@
 <?php
+$conn = mysqli_connect("localhost","root","","bengkell_db");
 
-$conn=mysqli_connect("localhost","root","","bengkell_db");
+if(!$conn){
+    die("Koneksi gagal");
+}
 
-$id=$_GET['id'];
+if(isset($_GET['id'])){
 
-mysqli_query($conn,"
-UPDATE servis
+    $id = $_GET['id'];
 
-SET
+    mysqli_query($conn,"
+    UPDATE servis
+    SET status_pembayaran='Lunas'
+    WHERE id='$id'
+    ");
 
-status_pembayaran='Lunas'
-
-WHERE id='$id'
-");
-
-header("Location:index.php");
-
+    header("Location: index.php");
+    exit;
+}else{
+    echo "ID tidak ditemukan";
+}
 ?>
