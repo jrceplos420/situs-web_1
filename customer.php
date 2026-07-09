@@ -393,12 +393,12 @@ if (!isset($_SESSION['login']) || $_SESSION['level'] != 'customer') {
             </div>
 
             <div class="card">
-                <h2>🔧 5</h2>
+                <h2>🔧 4</h2>
                 <p>Mekanik Profesional</p>
             </div>
 
             <div class="card">
-                <h2>🏆 8 Tahun</h2>
+                <h2>🏆 5 Tahun</h2>
                 <p>Pengalaman Bengkel</p>
             </div>
 
@@ -496,6 +496,14 @@ if (!isset($_SESSION['login']) || $_SESSION['level'] != 'customer') {
                     <a href="naik_cc.php" class="btn">Lihat</a>
                 </div>
 
+
+            </div>
+
+            <div style="text-align:center; margin:30px 0;">
+                <a href="layanan.php" class="btn"
+                    style="padding:15px 35px; font-size:18px;">
+                    🔍 Lihat Semua Layanan
+                </a>
             </div>
 
             <div class="cards">
