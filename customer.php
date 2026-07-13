@@ -356,6 +356,7 @@ if (!isset($_SESSION['login']) || $_SESSION['level'] != 'customer') {
         <div class="menu">
             <a href="#home">Home</a>
             <a href="#layanan">Layanan</a>
+            <a href="blog.php">Blog</a>
             <a href="#lokasi">Lokasi</a>
             <a href="#tentang">Tentang Kami</a>
             <a href="booking.php">Booking</a>
