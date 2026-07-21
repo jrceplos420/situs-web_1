@@ -144,29 +144,45 @@
         /* GRID */
 
         .wrapper {
-
             width: 95%;
-
-            margin: auto;
-
+            max-width: 1400px;
+            margin: 40px auto;
             display: grid;
-
-            grid-template-columns: 3fr 1fr;
-
+            grid-template-columns: 3fr 320px;
             gap: 30px;
-
-            margin-bottom: 50px;
-
+            align-items: start;
         }
 
         .konten {
-
             display: grid;
-
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
             gap: 25px;
+        }
 
+        @media(max-width:768px) {
+
+            .wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .konten {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
         /* CARD */
@@ -186,6 +202,7 @@
             display: flex;
 
             flex-direction: column;
+            height: 100%;
 
         }
 
@@ -206,8 +223,10 @@
         }
 
         .card-body {
-
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
 
         }
 
@@ -268,6 +287,7 @@
             border-radius: 10px;
 
             text-decoration: none;
+            margin-top: auto;
 
         }
 
@@ -277,15 +297,19 @@
 
         }
 
+        .btn {
+            margin-top: auto;
+        }
+
         /* SIDEBAR */
 
         .sidebar {
 
             display: flex;
-
             flex-direction: column;
-
             gap: 25px;
+            position: sticky;
+            top: 100px;
 
         }
 
@@ -380,17 +404,34 @@
         /* FOOTER */
 
         footer {
-
-            margin-top: 50px;
-
+            margin-top: 40px;
+            width: 100%;
             background: #0077b6;
-
-            color: white;
-
+            color: #fff;
             text-align: center;
+            padding: 35px;
+        }
 
-            padding: 25px;
+        .kategori a {
+            text-decoration: none;
+        }
 
+        .kategori span {
+            display: block;
+            padding: 12px 22px;
+            border-radius: 25px;
+            background: #ececec;
+            transition: .3s;
+        }
+
+        .kategori span:hover {
+            background: #0077b6;
+            color: white;
+        }
+
+        .aktif {
+            background: #0077b6 !important;
+            color: white !important;
         }
     </style>
 
@@ -435,275 +476,490 @@
 
     </div>
 
+    <?php
+
+    $kategori = "";
+
+    if (isset($_GET['kategori'])) {
+        $kategori = $_GET['kategori'];
+    }
+
+    ?>
+
     <div class="kategori">
 
-        <span>Semua</span>
+        <a href="blog.php">
+            <span class="<?= ($kategori == "") ? "aktif" : ""; ?>">
+                Semua
+            </span>
+        </a>
 
-        <span>Tips</span>
+        <a href="blog.php?kategori=tips">
+            <span class="<?= ($kategori == "tips") ? "aktif" : ""; ?>">
+                Tips
+            </span>
+        </a>
 
-        <span>Servis</span>
+        <a href="blog.php?kategori=servis">
+            <span class="<?= ($kategori == "servis") ? "aktif" : ""; ?>">
+                Servis
+            </span>
+        </a>
 
-        <span>Promo</span>
+        <a href="blog.php?kategori=promo">
+            <span class="<?= ($kategori == "promo") ? "aktif" : ""; ?>">
+                Promo
+            </span>
+        </a>
 
-        <span>Modifikasi</span>
+        <a href="blog.php?kategori=modifikasi">
+            <span class="<?= ($kategori == "modifikasi") ? "aktif" : ""; ?>">
+                Modifikasi
+            </span>
+        </a>
 
-        <span>Edukasi</span>
+        <a href="blog.php?kategori=edukasi">
+            <span class="<?= ($kategori == "edukasi") ? "aktif" : ""; ?>">
+                Edukasi
+            </span>
+        </a>
 
     </div>
 
     <div class="wrapper">
 
+
         <div class="konten">
 
-            <!-- ARTIKEL 1 -->
-            <div class="card">
+            <?php
+            if ($kategori == "" || $kategori == "tips") {
+            ?>
 
-                <img src="gambar_blog/ganti_olii.webp">
+                <!-- ARTIKEL 1 -->
+                <div class="card tips">
 
-                <div class="card-body">
+                    <img src="gambar_blog/ganti_olii.webp">
 
-                    <span class="tag">Tips</span>
-                    <span class="tanggal">14 Juli 2026</span>
+                    <div class="card-body">
 
-                    <h3>Kapan Waktu yang Tepat Ganti Oli Motor?</h3>
+                        <span class="tag">Tips</span>
+                        <span class="tanggal">14 Juli 2026</span>
 
-                    <p>
-                        Jangan menunggu mesin rusak. Ketahui waktu yang tepat
-                        mengganti oli agar performa motor tetap maksimal.
-                    </p>
+                        <h3>Kapan Waktu yang Tepat Ganti Oli Motor?</h3>
 
-                    <a href="artikel/artikel1.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+                        <p>
+                            Jangan menunggu mesin rusak. Ketahui waktu yang tepat
+                            mengganti oli agar performa motor tetap maksimal.
+                        </p>
+
+                        <a href="artikel/artikel1.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "servis") {
+            ?>
+
+                <!-- ARTIKEL 2 -->
+                <div class="card servis">
+
+                    <img src="gambar_blog/servis_cvtt.webp">
+
+                    <div class="card-body">
+
+                        <span class="tag">Servis</span>
+                        <span class="tanggal">13 Juli 2026</span>
+
+                        <h3>Tips Merawat CVT Motor Matic</h3>
+
+                        <p>
+                            CVT yang bersih membuat tarikan motor lebih halus,
+                            irit BBM, dan nyaman digunakan.
+                        </p>
+
+                        <a href="artikel/artikel2.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
 
                 </div>
 
-            </div>
+            <?php } ?>
 
-            <!-- ARTIKEL 2 -->
-            <div class="card">
+            <?php
+            if ($kategori == "" || $kategori == "tips") {
+            ?>
 
-                <img src="gambar_blog/servis_cvtt.webp">
+                <!-- ARTIKEL 3 -->
+                <div class="card tips">
 
-                <div class="card-body">
+                    <img src="gambar_blog/kampas_remm.webp">
 
-                    <span class="tag">Servis</span>
-                    <span class="tanggal">13 Juli 2026</span>
+                    <div class="card-body">
 
-                    <h3>Tips Merawat CVT Motor Matic</h3>
+                        <span class="tag">Tips</span>
+                        <span class="tanggal">12 Juli 2026</span>
 
-                    <p>
-                        CVT yang bersih membuat tarikan motor lebih halus,
-                        irit BBM, dan nyaman digunakan.
-                    </p>
+                        <h3>Tanda Kampas Rem Harus Diganti</h3>
 
-                    <a href="artikel/artikel2.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+                        <p>
+                            Jangan abaikan suara berdecit pada rem.
+                            Bisa jadi kampas rem sudah habis.
+                        </p>
+
+                        <a href="artikel/artikel3.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "edukasi") {
+            ?>
+
+                <!-- ARTIKEL 4 -->
+                <div class="card edukasi">
+
+                    <img src="gambar_blog/ganti_akii.webp">
+
+                    <div class="card-body">
+
+                        <span class="tag">Edukasi</span>
+                        <span class="tanggal">11 Juli 2026</span>
+
+                        <h3>Cara Merawat Aki Motor Agar Awet</h3>
+
+                        <p>
+                            Perawatan aki yang benar membuat starter tetap ringan
+                            dan umur aki lebih panjang.
+                        </p>
+
+                        <a href="artikel/artikel4.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "servis") {
+            ?>
+
+                <!-- ARTIKEL 5 -->
+                <div class="card servis">
+
+                    <img src="gambar_blog/rantaii.webp">
+
+                    <div class="card-body">
+
+                        <span class="tag">Servis</span>
+                        <span class="tanggal">10 Juli 2026</span>
+
+                        <h3>Tips Merawat Rantai Motor</h3>
+
+                        <p>
+                            Bersihkan dan lumasi rantai secara berkala agar
+                            tidak cepat aus.
+                        </p>
+
+                        <a href="artikel/artikel5.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "tips") {
+            ?>
+
+                <!-- ARTIKEL 6 -->
+                <div class="card tips">
+
+                    <img src="gambar_blog/tambal_bann.webp">
+
+                    <div class="card-body">
+
+                        <span class="tag">Tips</span>
+                        <span class="tanggal">9 Juli 2026</span>
+
+                        <h3>Kapan Ban Motor Harus Diganti?</h3>
+
+                        <p>
+                            Kenali tanda ban motor yang sudah tidak layak
+                            digunakan agar perjalanan tetap aman.
+                        </p>
+
+                        <a href="artikel/artikel6.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "edukasi") {
+            ?>
+
+                <!-- ARTIKEL 7 -->
+                <div class="card edukasi">
+
+                    <img src="gambar_blog/busii.webp">
+
+                    <div class="card-body">
+
+                        <span class="tag">Edukasi</span>
+                        <span class="tanggal">8 Juli 2026</span>
+
+                        <h3>Cara Mengetahui Busi Motor Rusak</h3>
+
+                        <p>
+                            Busi yang bermasalah membuat mesin sulit hidup
+                            dan konsumsi BBM meningkat.
+                        </p>
+
+                        <a href="artikel/artikel7.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "servis") {
+            ?>
+
+                <!-- ARTIKEL 8 -->
+                <div class="card servis">
+
+                    <img src="gambar_blog/injeksii.webp">
+
+                    <div class="card-body">
+
+                        <span class="tag">Servis</span>
+                        <span class="tanggal">7 Juli 2026</span>
+
+                        <h3>Pentingnya Servis Injeksi Berkala</h3>
+
+                        <p>
+                            Membersihkan injector secara rutin membuat
+                            pembakaran lebih sempurna.
+                        </p>
+
+                        <a href="artikel/artikel8.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
 
                 </div>
 
-            </div>
+            <?php } ?>
 
-            <!-- ARTIKEL 3 -->
-            <div class="card">
 
-                <img src="gambar_blog/kampas_remm.webp">
+            <?php
+            if ($kategori == "" || $kategori == "tips") {
+            ?>
 
-                <div class="card-body">
+                <!-- ARTIKEL 9 -->
+                <div class="card tips">
 
-                    <span class="tag">Tips</span>
-                    <span class="tanggal">12 Juli 2026</span>
+                    <img src="gambar_blog/cuci_motorr.webp">
 
-                    <h3>Tanda Kampas Rem Harus Diganti</h3>
+                    <div class="card-body">
 
-                    <p>
-                        Jangan abaikan suara berdecit pada rem.
-                        Bisa jadi kampas rem sudah habis.
-                    </p>
+                        <span class="tag">Tips</span>
+                        <span class="tanggal">6 Juli 2026</span>
 
-                    <a href="artikel/artikel3.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+                        <h3>Manfaat Cuci Motor Secara Rutin</h3>
 
-                </div>
+                        <p>
+                            Motor bersih bukan hanya enak dipandang,
+                            tetapi juga mencegah karat.
+                        </p>
 
-            </div>
+                        <a href="artikel/artikel9.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
 
-            <!-- ARTIKEL 4 -->
-            <div class="card">
-
-                <img src="gambar_blog/ganti_akii.webp">
-
-                <div class="card-body">
-
-                    <span class="tag">Edukasi</span>
-                    <span class="tanggal">11 Juli 2026</span>
-
-                    <h3>Cara Merawat Aki Motor Agar Awet</h3>
-
-                    <p>
-                        Perawatan aki yang benar membuat starter tetap ringan
-                        dan umur aki lebih panjang.
-                    </p>
-
-                    <a href="artikel/artikel4.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+                    </div>
 
                 </div>
 
-            </div>
+            <?php } ?>
 
-            <!-- ARTIKEL 5 -->
-            <div class="card">
+            <?php
+            if ($kategori == "" || $kategori == "promo") {
+            ?>
 
-                <img src="gambar_blog/rantaii.webp">
+                <!-- ARTIKEL 10 -->
 
-                <div class="card-body">
+                <div class="card promo">
 
-                    <span class="tag">Servis</span>
-                    <span class="tanggal">10 Juli 2026</span>
+                    <img src="gambar_blog/promo_serviss.webp">
 
-                    <h3>Tips Merawat Rantai Motor</h3>
+                    <div class="card-body">
 
-                    <p>
-                        Bersihkan dan lumasi rantai secara berkala agar
-                        tidak cepat aus.
-                    </p>
+                        <span class="tag">Promo</span>
+                        <span class="tanggal">5 Juli 2026</span>
 
-                    <a href="artikel/artikel5.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+                        <h3>Promo Servis Bulan Ini</h3>
 
-                </div>
+                        <p>
+                            Nikmati diskon servis hingga 20% dan gratis
+                            pengecekan mesin di Bengkel KENGGEMOTI.
+                        </p>
 
-            </div>
+                        <a href="artikel/artikel10.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
 
-            <!-- ARTIKEL 6 -->
-            <div class="card">
-
-                <img src="gambar_blog/tambal_bann.webp">
-
-                <div class="card-body">
-
-                    <span class="tag">Tips</span>
-                    <span class="tanggal">9 Juli 2026</span>
-
-                    <h3>Kapan Ban Motor Harus Diganti?</h3>
-
-                    <p>
-                        Kenali tanda ban motor yang sudah tidak layak
-                        digunakan agar perjalanan tetap aman.
-                    </p>
-
-                    <a href="artikel/artikel6.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+                    </div>
 
                 </div>
 
-            </div>
+            <?php } ?>
 
-            <!-- ARTIKEL 7 -->
-            <div class="card">
+            <?php
+if($kategori=="" || $kategori=="modifikasi"){
+?>
 
-                <img src="gambar_blog/busii.webp">
+<div class="card modifikasi">
 
-                <div class="card-body">
+    <img src="gambar_blog/modifikasi1.webp">
 
-                    <span class="tag">Edukasi</span>
-                    <span class="tanggal">8 Juli 2026</span>
+    <div class="card-body">
 
-                    <h3>Cara Mengetahui Busi Motor Rusak</h3>
+        <span class="tag">Modifikasi</span>
 
-                    <p>
-                        Busi yang bermasalah membuat mesin sulit hidup
-                        dan konsumsi BBM meningkat.
-                    </p>
+        <span class="tanggal">4 Juli 2026</span>
 
-                    <a href="artikel/artikel7.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+        <h3>Tips Modifikasi Motor Agar Tetap Aman</h3>
 
-                </div>
+        <p>
+            Modifikasi motor boleh dilakukan, namun tetap harus
+            memperhatikan faktor keselamatan dan kenyamanan berkendara.
+        </p>
 
-            </div>
+        <a href="artikel/artikel11.php" class="btn">
+            Baca Selengkapnya
+        </a>
 
-            <!-- ARTIKEL 8 -->
-            <div class="card">
+    </div>
 
-                <img src="gambar_blog/injeksii.webp">
+</div>
 
-                <div class="card-body">
+<?php } ?>
 
-                    <span class="tag">Servis</span>
-                    <span class="tanggal">7 Juli 2026</span>
+<?php
+if($kategori=="" || $kategori=="modifikasi"){
+?>
 
-                    <h3>Pentingnya Servis Injeksi Berkala</h3>
+<div class="card modifikasi">
 
-                    <p>
-                        Membersihkan injector secara rutin membuat
-                        pembakaran lebih sempurna.
-                    </p>
+    <img src="gambar_blog/modifikasi2.webp">
 
-                    <a href="artikel/artikel8.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+    <div class="card-body">
 
-                </div>
+        <span class="tag">Modifikasi</span>
 
-            </div>
+        <span class="tanggal">3 Juli 2026</span>
 
-            <!-- ARTIKEL 9 -->
-            <div class="card">
+        <h3>Memilih Velg Racing yang Tepat</h3>
 
-                <img src="gambar_blog/cuci_motorr.webp">
+        <p>
+            Gunakan velg yang sesuai ukuran standar agar motor tetap stabil,
+            nyaman dikendarai, dan tidak merusak kaki-kaki motor.
+        </p>
 
-                <div class="card-body">
+        <a href="artikel/artikel12.php" class="btn">
+            Baca Selengkapnya
+        </a>
 
-                    <span class="tag">Tips</span>
-                    <span class="tanggal">6 Juli 2026</span>
+    </div>
 
-                    <h3>Manfaat Cuci Motor Secara Rutin</h3>
+</div>
 
-                    <p>
-                        Motor bersih bukan hanya enak dipandang,
-                        tetapi juga mencegah karat.
-                    </p>
+<?php } ?>
 
-                    <a href="artikel/artikel9.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+<?php
+if($kategori=="" || $kategori=="modifikasi"){
+?>
 
-                </div>
+<div class="card modifikasi">
 
-            </div>
+    <img src="gambar_blog/modifikasi3.webp">
 
-            <!-- ARTIKEL 10 -->
-            <div class="card">
+    <div class="card-body">
 
-                <img src="gambar_blog/promo_serviss.webp">
+        <span class="tag">Modifikasi</span>
 
-                <div class="card-body">
+        <span class="tanggal">2 Juli 2026</span>
 
-                    <span class="tag">Promo</span>
-                    <span class="tanggal">5 Juli 2026</span>
+        <h3>Cara Memilih Knalpot Racing</h3>
 
-                    <h3>Promo Servis Bulan Ini</h3>
+        <p>
+            Pilih knalpot yang berkualitas dan tidak melebihi batas kebisingan
+            agar tetap nyaman digunakan di jalan raya.
+        </p>
 
-                    <p>
-                        Nikmati diskon servis hingga 20% dan gratis
-                        pengecekan mesin di Bengkel KENGGEMOTI.
-                    </p>
+        <a href="artikel/artikel13.php" class="btn">
+            Baca Selengkapnya
+        </a>
 
-                    <a href="artikel/artikel10.php" class="btn">
-                        Baca Selengkapnya
-                    </a>
+    </div>
 
-                </div>
+</div>
 
-            </div>
+<?php } ?>
+
+<?php
+if($kategori=="" || $kategori=="modifikasi"){
+?>
+
+<div class="card modifikasi">
+
+    <img src="gambar_blog/modifikasi4.webp">
+
+    <div class="card-body">
+
+        <span class="tag">Modifikasi</span>
+
+        <span class="tanggal">1 Juli 2026</span>
+
+        <h3>Suspensi Racing untuk Harian?</h3>
+
+        <p>
+            Gunakan suspensi yang sesuai kebutuhan agar motor tetap nyaman
+            dipakai sehari-hari tanpa mengurangi keamanan.
+        </p>
+
+        <a href="artikel/artikel14.php" class="btn">
+            Baca Selengkapnya
+        </a>
+
+    </div>
+
+</div>
+
+<?php } ?>
 
         </div>
 
@@ -730,47 +986,50 @@
 
             </div>
 
-            <div class="box">
+        </div>
 
-                <h2>📂 Kategori</h2>
+        <div class="box">
 
-                <ul>
+            <h2>📂 Kategori</h2>
 
-                    <li>🛠 Tips Perawatan</li>
+            <ul>
 
-                    <li>⚙ Servis Motor</li>
+                <li>🛠 Tips Perawatan</li>
 
-                    <li>🏍 Modifikasi</li>
+                <li>⚙ Servis Motor</li>
 
-                    <li>🎁 Promo Bengkel</li>
+                <li>🏍 Modifikasi</li>
 
-                    <li>📚 Edukasi Otomotif</li>
+                <li>🎁 Promo Bengkel</li>
 
-                </ul>
+                <li>📚 Edukasi Otomotif</li>
 
-            </div>
-
-            <div class="box wa">
-
-                <h2>📞 Hubungi Kami</h2>
-
-                <p>
-
-                    Ada pertanyaan mengenai servis motor?
-
-                    Hubungi mekanik kami melalui WhatsApp.
-
-                </p>
-
-                <a href="https://wa.me/6282234813822" target="_blank">
-
-                    Chat WhatsApp
-
-                </a>
-
-            </div>
+            </ul>
 
         </div>
+    </div>
+
+    <div class="box wa">
+
+        <h2>📞 Hubungi Kami</h2>
+
+        <p>
+
+            Ada pertanyaan mengenai servis motor?
+
+            Hubungi mekanik kami melalui WhatsApp.
+
+        </p>
+
+        <a href="https://wa.me/6282234813822" target="_blank">
+
+            Chat WhatsApp
+
+        </a>
+
+    </div>
+
+    </div>
 
     </div>
 
