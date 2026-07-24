@@ -1,8 +1,9 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['login']) || $_SESSION['level'] != 'customer') {
-    header("Location:index.php");
+if (!isset($_SESSION['customer'])) {
+
+    header("Location: login_customer.php");
     exit;
 }
 ?>
@@ -362,7 +363,7 @@ if (!isset($_SESSION['login']) || $_SESSION['level'] != 'customer') {
             <a href="booking.php">Booking</a>
         </div>
 
-        <a class="logout" href="index.php?logout=true">
+        <a class="logout" href="logout_customer.php">
             Logout
         </a>
 

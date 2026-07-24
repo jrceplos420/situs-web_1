@@ -1,14 +1,14 @@
 <?php
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "db_tia2";
 
-$koneksi = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-if(!$koneksi) {
-    die("koneksi gagal:" . mysql_connect_error());
-} else {
-    echo "koneksi berhasil ";
+$host     = "localhost";
+$user     = "root";
+$password = "";
+$database = "bengkell_db";
+
+$conn = mysqli_connect($host, $user, $password, $database);
+
+if (!$conn) {
+    die("Koneksi database gagal : " . mysqli_connect_error());
 }
 
 ?>

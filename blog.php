@@ -838,128 +838,249 @@
             <?php } ?>
 
             <?php
-if($kategori=="" || $kategori=="modifikasi"){
-?>
+            if ($kategori == "" || $kategori == "modifikasi") {
+            ?>
 
-<div class="card modifikasi">
+                <div class="card modifikasi">
 
-    <img src="gambar_blog/modifikasi1.webp">
+                    <img src="gambar_blog/lampu_led.jpg">
 
-    <div class="card-body">
+                    <div class="card-body">
 
-        <span class="tag">Modifikasi</span>
+                        <span class="tag">Modifikasi</span>
 
-        <span class="tanggal">4 Juli 2026</span>
+                        <span class="tanggal">4 Juli 2026</span>
 
-        <h3>Tips Modifikasi Motor Agar Tetap Aman</h3>
+                        <h3>Upgrade Lampu LED Motor</h3>
 
-        <p>
-            Modifikasi motor boleh dilakukan, namun tetap harus
-            memperhatikan faktor keselamatan dan kenyamanan berkendara.
-        </p>
+                        <p>
+                            Lampu LED memiliki cahaya yang lebih terang dibanding lampu halogen sehingga perjalanan
+                            malam menjadi lebih aman.
+                        </p>
 
-        <a href="artikel/artikel11.php" class="btn">
-            Baca Selengkapnya
-        </a>
+                        <a href="artikel/artikel11.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
 
-    </div>
+                    </div>
 
-</div>
+                </div>
 
-<?php } ?>
+            <?php } ?>
 
-<?php
-if($kategori=="" || $kategori=="modifikasi"){
-?>
+            <?php
+            if ($kategori == "" || $kategori == "modifikasi") {
+            ?>
 
-<div class="card modifikasi">
+                <div class="card modifikasi">
 
-    <img src="gambar_blog/modifikasi2.webp">
+                    <img src="gambar_blog/velg_racing.jpg">
 
-    <div class="card-body">
+                    <div class="card-body">
 
-        <span class="tag">Modifikasi</span>
+                        <span class="tag">Modifikasi</span>
 
-        <span class="tanggal">3 Juli 2026</span>
+                        <span class="tanggal">3 Juli 2026</span>
 
-        <h3>Memilih Velg Racing yang Tepat</h3>
+                        <h3>Memilih Velg Racing yang Tepat</h3>
 
-        <p>
-            Gunakan velg yang sesuai ukuran standar agar motor tetap stabil,
-            nyaman dikendarai, dan tidak merusak kaki-kaki motor.
-        </p>
+                        <p>
+                            Gunakan velg yang sesuai ukuran standar agar motor tetap stabil,
+                            nyaman dikendarai, dan tidak merusak kaki-kaki motor.
+                        </p>
 
-        <a href="artikel/artikel12.php" class="btn">
-            Baca Selengkapnya
-        </a>
+                        <a href="artikel/artikel12.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
 
-    </div>
+                    </div>
 
-</div>
+                </div>
 
-<?php } ?>
+            <?php } ?>
 
-<?php
-if($kategori=="" || $kategori=="modifikasi"){
-?>
+            <?php
+            if ($kategori == "" || $kategori == "modifikasi") {
+            ?>
 
-<div class="card modifikasi">
+                <div class="card modifikasi">
 
-    <img src="gambar_blog/modifikasi3.webp">
+                    <img src="gambar_blog/knalpot_modif.jpg">
 
-    <div class="card-body">
+                    <div class="card-body">
 
-        <span class="tag">Modifikasi</span>
+                        <span class="tag">Modifikasi</span>
 
-        <span class="tanggal">2 Juli 2026</span>
+                        <span class="tanggal">2 Juli 2026</span>
 
-        <h3>Cara Memilih Knalpot Racing</h3>
+                        <h3>Cara Memilih Knalpot Racing</h3>
 
-        <p>
-            Pilih knalpot yang berkualitas dan tidak melebihi batas kebisingan
-            agar tetap nyaman digunakan di jalan raya.
-        </p>
+                        <p>
+                            Pilih knalpot yang berkualitas dan tidak melebihi batas kebisingan
+                            agar tetap nyaman digunakan di jalan raya.
+                        </p>
 
-        <a href="artikel/artikel13.php" class="btn">
-            Baca Selengkapnya
-        </a>
+                        <a href="artikel/artikel13.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
 
-    </div>
+                    </div>
 
-</div>
+                </div>
 
-<?php } ?>
+            <?php } ?>
 
-<?php
-if($kategori=="" || $kategori=="modifikasi"){
-?>
+            <?php
+            if ($kategori == "" || $kategori == "modifikasi") {
+            ?>
 
-<div class="card modifikasi">
+                <div class="card modifikasi">
 
-    <img src="gambar_blog/modifikasi4.webp">
+                    <img src="gambar_blog/jok_motor.jpg">
 
-    <div class="card-body">
+                    <div class="card-body">
 
-        <span class="tag">Modifikasi</span>
+                        <span class="tag">Modifikasi</span>
 
-        <span class="tanggal">1 Juli 2026</span>
+                        <span class="tanggal">1 Juli 2026</span>
 
-        <h3>Suspensi Racing untuk Harian?</h3>
+                        <h3>Modifikasi Jok Motor</h3>
 
-        <p>
-            Gunakan suspensi yang sesuai kebutuhan agar motor tetap nyaman
-            dipakai sehari-hari tanpa mengurangi keamanan.
-        </p>
+                        <p>
 
-        <a href="artikel/artikel14.php" class="btn">
-            Baca Selengkapnya
-        </a>
+                            Mengganti jok motor dapat meningkatkan kenyamanan saat berkendara jarak jauh.
 
-    </div>
+                        </p>
 
-</div>
+                        <a href="artikel/artikel14.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
 
-<?php } ?>
+                    </div>
+
+                </div>
+
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "modifikasi") {
+            ?>
+
+                <div class="card modifikasi">
+
+                    <img src="gambar_blog/repaint_body.jpg">
+
+                    <div class="card-body">
+
+                        <span class="tag">Modifikasi</span>
+                        <span class="tanggal">30 Juni 2026</span>
+
+                        <h3>Repaint Body Motor Agar Tampil Baru</h3>
+
+                        <p>
+                            Repaint body dapat mengubah tampilan motor menjadi lebih fresh,
+                            elegan, dan meningkatkan nilai estetika kendaraan.
+                        </p>
+
+                        <a href="artikel/artikel15.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "modifikasi") {
+            ?>
+
+                <div class="card modifikasi">
+
+                    <img src="gambar_blog/shok_motorr.webp">
+
+                    <div class="card-body">
+
+                        <span class="tag">Modifikasi</span>
+                        <span class="tanggal">29 Juni 2026</span>
+
+                        <h3>Upgrade Suspensi Motor untuk Kenyamanan</h3>
+
+                        <p>
+                            Mengganti suspensi dengan kualitas yang lebih baik membuat motor
+                            lebih stabil, nyaman, dan meningkatkan handling saat berkendara.
+                        </p>
+
+                        <a href="artikel/artikel16.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "tips") {
+            ?>
+
+                <div class="card tips">
+
+                    <img src="gambar_blog/panaskan_motor.jpg">
+
+                    <div class="card-body">
+
+                        <span class="tag">Tips</span>
+                        <span class="tanggal">30 Juni 2026</span>
+
+                        <h3>Tips Memanaskan Motor yang Benar</h3>
+
+                        <p>
+                            Memanaskan motor selama 1-3 menit sebelum digunakan dapat membantu
+                            melumasi komponen mesin dan menjaga performa kendaraan.
+                        </p>
+
+                        <a href="artikel/artikel17.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+
+            <?php } ?>
+
+            <?php
+            if ($kategori == "" || $kategori == "tips") {
+            ?>
+
+                <div class="card tips">
+
+                    <img src="gambar_blog/bbm.jpg">
+
+                    <div class="card-body">
+
+                        <span class="tag">Tips</span>
+                        <span class="tanggal">29 Juni 2026</span>
+
+                        <h3>Cara Menghemat BBM Motor</h3>
+
+                        <p>
+                            Berkendara dengan kecepatan stabil, rutin servis, dan menjaga tekanan
+                            angin ban dapat membuat konsumsi BBM lebih irit.
+                        </p>
+
+                        <a href="artikel/artikel18.php" class="btn">
+                            Baca Selengkapnya
+                        </a>
+
+                    </div>
+
+                </div>
+
+            <?php } ?>
 
         </div>
 
@@ -981,6 +1102,10 @@ if($kategori=="" || $kategori=="modifikasi"){
                     <li><a href="artikel/artikel4.php">Cara Merawat Aki Motor</a></li>
 
                     <li><a href="artikel/artikel5.php">Tips Merawat Rantai Motor</a></li>
+
+                    <li><a href="artikel/artikel15.php">Repaint Body Motor Agar Tampil Baru</a></li>
+
+                    <li><a href="artikel/artikel16.php">Upgrade Suspensi Motor untuk Kenyamanan</a></li>
 
                 </ul>
 

@@ -28,18 +28,7 @@ if (isset($_POST['login'])) {
 
         header("Location: index.php");
         exit;
-    } elseif (
-        $username == "customer" &&
-        $password == "123" &&
-        $level == "customer"
-    ) {
-
-        $_SESSION['login'] = true;
-        $_SESSION['level'] = "customer";
-
-        header("Location: customer.php");
-        exit;
-    } else {
+    }  else {
 
         $error = "Username atau Password salah!";
     }
