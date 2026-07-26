@@ -440,7 +440,7 @@ if (!isset($_SESSION['customer'])) {
             <div class="cards">
 
                 <div class="card">
-                    <img src="servis mesin motor.jpg"
+                    <img src="assets/img/servis mesin motor.jpg"
                         alt="Servis Motor"
                         style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
 
@@ -451,7 +451,7 @@ if (!isset($_SESSION['customer'])) {
                     <a href="servis_motor.php" class="btn">Lihat</a>
                 </div>
                 <div class="card">
-                    <img src="ganti oli.webp"
+                    <img src="assets/img/ganti oli.webp"
                         alt="Ganti Oli"
                         style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
 
@@ -463,7 +463,7 @@ if (!isset($_SESSION['customer'])) {
                 </div>
 
                 <div class="card">
-                    <img src="servis cvt.jpg"
+                    <img src="assets/img/servis cvt.jpg"
                         alt="Servis CVT"
                         style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
 
@@ -475,7 +475,7 @@ if (!isset($_SESSION['customer'])) {
                 </div>
 
                 <div class="card">
-                    <img src="tambal ban.webp"
+                    <img src="assets/img/tambal ban.webp"
                         alt="Tambal Ban"
                         style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
 
@@ -483,11 +483,11 @@ if (!isset($_SESSION['customer'])) {
 
                     <p>Tambal ban biar aman disetiap perjalananmu.</p>
 
-                    <a href="tambal_ban.php" class="btn">Lihat</a>
+                    <a href="assets/img/tambal_ban.php" class="btn">Lihat</a>
                 </div>
 
                 <div class="card">
-                    <img src="boreup.webp"
+                    <img src="assets/img/boreup.webp"
                         alt="Naik CC Motor"
                         style="width:100%; height:200px; object-fit:cover; border-radius:10px;">
 
@@ -635,7 +635,7 @@ if (!isset($_SESSION['customer'])) {
                 <div class="galeri">
 
                     <div class="mekanik">
-                        <img src="1.jpg" alt="Mekanik 1">
+                        <img src="assets/img/1.jpg" alt="Mekanik 1">
 
                         <h3>🔧 Sulaiman</h3>
 
@@ -648,7 +648,7 @@ if (!isset($_SESSION['customer'])) {
                     </div>
 
                     <div class="mekanik">
-                        <img src="2.jpg" alt="Mekanik 2">
+                        <img src="assets/img/2.jpg" alt="Mekanik 2">
 
                         <h3>⚙ Budi Setiawan</h3>
 
@@ -660,7 +660,7 @@ if (!isset($_SESSION['customer'])) {
                     </div>
 
                     <div class="mekanik">
-                        <img src="8.jpg" alt="Mekanik 3">
+                        <img src="assets/img/8.jpg" alt="Mekanik 3">
 
                         <h3>🛢 Rizky Pratama</h3>
 
@@ -672,7 +672,7 @@ if (!isset($_SESSION['customer'])) {
                     </div>
 
                     <div class="mekanik">
-                        <img src="7.jpg" alt="Mekanik 4">
+                        <img src="assets/img/7.jpg" alt="Mekanik 4">
 
                         <h3>🏍 Dimas Racing</h3>
 
@@ -719,7 +719,7 @@ if (!isset($_SESSION['customer'])) {
             </p>
 
             <iframe
-                src="https://maps.google.com/maps?q=Surabaya&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://www.google.com/maps?q=Mataram&output=embed"
                 width="100%"
                 height="450"
                 style="border:0; border-radius:20px;">
@@ -770,19 +770,19 @@ if (!isset($_SESSION['customer'])) {
                 <div class="sosmed">
 
                     <a href="tiktok.com/@liwacaspr.420" target="_blank">
-                        <img src="tiktok.jpg" alt="TikTok">
+                        <img src="assets/img/tiktok.jpg" alt="TikTok">
                     </a>
 
                     <a href="https://www.instagram.com/____kosonggggggg?igsh=ZnMxZmM3NTY2enJw" target="_blank">
-                        <img src="ig.jpg" alt="Instagram">
+                        <img src="assets/img/ig.jpg" alt="Instagram">
                     </a>
 
                     <a href="https://www.facebook.com/share/1N2WqWoysJ/" target="_blank">
-                        <img src="fb.jpg" alt="Facebook">
+                        <img src="assets/img/fb.jpg" alt="Facebook">
                     </a>
 
                     <a href="https://wa.me/6282234813822" target="_blank">
-                        <img src="wa.jpg" alt="WhatsApp">
+                        <img src="assets/img/wa.jpg" alt="WhatsApp">
                     </a>
 
                 </div>
@@ -805,7 +805,7 @@ if (!isset($_SESSION['customer'])) {
 
                 <div class="artikel">
 
-                    <img src="servis mesin motor.jpg">
+                    <img src="assets/img/servis mesin motor.jpg">
 
                     <span>
                         Tips Merawat Mesin Motor Agar Tetap Prima
@@ -815,7 +815,7 @@ if (!isset($_SESSION['customer'])) {
 
                 <div class="artikel">
 
-                    <img src="servis cvt.jpg">
+                    <img src="assets/img/servis cvt.jpg">
 
                     <span>
                         Cara Mengetahui Kerusakan CVT Motor
@@ -825,7 +825,7 @@ if (!isset($_SESSION['customer'])) {
 
                 <div class="artikel">
 
-                    <img src="ganti oli.webp">
+                    <img src="assets/img/ganti oli.webp">
 
                     <span>
                         Panduan Lengkap Ganti Oli Motor

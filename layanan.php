@@ -209,6 +209,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, .15);
 
             transition: .3s;
+            animation: muncul .8s ease;
 
             display: flex;
 
@@ -229,6 +230,14 @@
             height: 220px;
 
             object-fit: cover;
+
+            transition: .4s;
+
+        }
+
+        .card:hover img {
+
+            transform: scale(1.08);
 
         }
 
@@ -380,6 +389,26 @@
 
         }
 
+        @keyframes muncul{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
         .promo {
 
             width: 95%;
@@ -475,7 +504,7 @@
             <!-- CARD 1 SAMPAI CARD 10 AKAN SAYA KIRIM PADA BAGIAN 2 -->
             <div class="card">
 
-                <img src="servis mesin motor.jpg" alt="Servis Mesin">
+                <img src="assets/img/servis mesin motor.jpg" alt="Servis Mesin">
 
                 <h2>🛠 Servis Mesin Motor</h2>
 
@@ -525,7 +554,7 @@
 
             <div class="card">
 
-                <img src="servis cvt.jpg" alt="Servis CVT">
+                <img src="assets/img/servis cvt.jpg" alt="Servis CVT">
 
                 <h2>⚙ Servis CVT</h2>
 
@@ -571,7 +600,7 @@
 
             <div class="card">
 
-                <img src="boreup.webp" alt="Naik CC">
+                <img src="assets/img/boreup.webp" alt="Naik CC">
 
                 <h2>🏍 Naik CC Motor</h2>
 
@@ -594,7 +623,7 @@
 
             <div class="card">
 
-                <img src="kampas_rem.jpg" alt="Kampas Rem">
+                <img src="assets/img/kampas_rem.jpg" alt="Kampas Rem">
 
                 <h2>🛑 Ganti Kampas Rem</h2>
 
@@ -617,7 +646,7 @@
 
             <div class="card">
 
-                <img src="ganti_aki.jpg" alt="Ganti Aki">
+                <img src="assets/img/ganti_aki.jpg" alt="Ganti Aki">
 
                 <h2>🔋 Ganti Aki</h2>
 
@@ -640,7 +669,7 @@
 
             <div class="card">
 
-                <img src="rantai.jpg" alt="Servis Rantai">
+                <img src="assets/img/rantai.jpg" alt="Servis Rantai">
 
                 <h2>⛓ Servis Rantai</h2>
 
@@ -663,7 +692,7 @@
 
             <div class="card">
 
-                <img src="injeksi.jpg" alt="Servis Injeksi">
+                <img src="assets/img/injeksi.jpg" alt="Servis Injeksi">
 
                 <h2>💻 Servis Injeksi</h2>
 
@@ -686,7 +715,7 @@
 
             <div class="card">
 
-                <img src="cuci_motor.webp" alt="Cuci Motor">
+                <img src="assets/img/cuci_motor.webp" alt="Cuci Motor">
 
                 <h2>🧼 Cuci Motor Premium</h2>
 
@@ -707,23 +736,29 @@
 
             </div>
 
+
             <div class="card">
 
-                <img src="cuci_motor.webp" alt="Cuci Motor">
+                <div class="badge">
+                    🆕 Baru
+                </div>
 
-                <h2>🧼 Cuci Motor Premium</h2>
+                <img src="assets/img/kelistrikan.jpg" alt="Kelistrikan">
+
+                <h2>💡 Servis Kelistrikan</h2>
 
                 <p>
-                    Cuci motor premium hingga bagian mesin, kolong, velg, dan bodi sehingga
-                    motor tampak bersih seperti baru.
+                    Pemeriksaan aki, lampu, starter, sekring,
+                    dan sistem kelistrikan motor.
                 </p>
 
                 <div class="info">
-                    <span>💰 Mulai Rp75.000</span>
-                    <span>⏱ 45 Menit</span>
+                    <span>💰 Mulai Rp80.000</span>
+                    <span>⏱ 1 Jam</span>
                 </div>
 
-                <a href="cuci_motor.php" class="btn">Lihat</a>
+                <a href="kelistrikan.php" class="btn">Lihat</a>
+
                 <a href="booking.php" class="booking">
                     📅 Booking Sekarang
                 </a>
@@ -732,21 +767,22 @@
 
             <div class="card">
 
-                <img src="cuci_motor.webp" alt="Cuci Motor">
+                <img src="assets/img/ganti_ban.jpg" alt="Ganti Ban">
 
-                <h2>🧼 Cuci Motor Premium</h2>
+                <h2>🛞 Ganti Ban</h2>
 
                 <p>
-                    Cuci motor premium hingga bagian mesin, kolong, velg, dan bodi sehingga
-                    motor tampak bersih seperti baru.
+                    Penggantian ban luar maupun ban dalam
+                    dengan kualitas terbaik.
                 </p>
 
                 <div class="info">
-                    <span>💰 Mulai Rp75.000</span>
-                    <span>⏱ 45 Menit</span>
+                    <span>💰 Mulai Rp150.000</span>
+                    <span>⏱ 30 Menit</span>
                 </div>
 
-                <a href="cuci_motor.php" class="btn">Lihat</a>
+                <a href="ganti_ban.php" class="btn">Lihat</a>
+
                 <a href="booking.php" class="booking">
                     📅 Booking Sekarang
                 </a>
