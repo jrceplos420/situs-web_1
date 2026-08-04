@@ -512,7 +512,7 @@ if (!isset($_SESSION['login'])) {
         <!-- Foto dan Logout tetap di kanan -->
         <div style="display:flex;align-items:center;gap:15px;">
 
-            <img src="1.jpg"
+            <img src="gambar/pelanggan2.jpg"
                 style="width:45px;height:45px;border-radius:50%;">
 
             <a class="logout"

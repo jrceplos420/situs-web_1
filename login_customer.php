@@ -154,7 +154,7 @@ if (isset($_POST['login'])) {
 
                         <div class="text-center">
 
-                            <a href="home.php">
+                            <a href="welcome.php">
 
                                 ← Kembali ke Beranda
 

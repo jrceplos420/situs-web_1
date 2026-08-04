@@ -7,128 +7,128 @@
     <title>Promo Servis Bulan Ini | KENGGEMOTI Racing Team</title>
 
     <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
-        body{
-            background:#f4f6f9;
+        body {
+            background: #f4f6f9;
         }
 
-        .navbar{
-            background:linear-gradient(135deg,#0077b6,#00b4d8);
-            color:white;
-            padding:20px 40px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
+        .navbar {
+            background: linear-gradient(135deg, #0077b6, #00b4d8);
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .navbar a{
-            color:white;
-            text-decoration:none;
-            background:red;
-            padding:10px 18px;
-            border-radius:10px;
-            font-weight:bold;
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            background: red;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-weight: bold;
         }
 
-        .container{
-            width:90%;
-            max-width:1000px;
-            margin:40px auto;
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
         }
 
-        .artikel{
-            background:white;
-            border-radius:20px;
-            overflow:hidden;
-            box-shadow:0 5px 20px rgba(0,0,0,.1);
+        .artikel {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
         }
 
-        .artikel img{
-            width:100%;
-            height:450px;
-            object-fit:cover;
+        .artikel img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
         }
 
-        .isi{
-            padding:35px;
+        .isi {
+            padding: 35px;
         }
 
-        .kategori{
-            display:inline-block;
-            background:#ffc107;
-            padding:8px 15px;
-            border-radius:20px;
-            font-weight:bold;
-            margin-bottom:15px;
+        .kategori {
+            display: inline-block;
+            background: #ffc107;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
-        .judul{
-            font-size:38px;
-            color:#0077b6;
-            margin-bottom:10px;
+        .judul {
+            font-size: 38px;
+            color: #0077b6;
+            margin-bottom: 10px;
         }
 
-        .info{
-            color:gray;
-            margin-bottom:30px;
+        .info {
+            color: gray;
+            margin-bottom: 30px;
         }
 
-        .isi p{
-            line-height:32px;
-            color:#444;
-            text-align:justify;
-            margin-bottom:20px;
-            font-size:18px;
+        .isi p {
+            line-height: 32px;
+            color: #444;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 18px;
         }
 
-        .tips{
-            background:#eef8ff;
-            border-left:6px solid #0077b6;
-            padding:20px;
-            border-radius:10px;
-            margin:30px 0;
+        .tips {
+            background: #eef8ff;
+            border-left: 6px solid #0077b6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
         }
 
-        .tips h3{
-            color:#0077b6;
-            margin-bottom:15px;
+        .tips h3 {
+            color: #0077b6;
+            margin-bottom: 15px;
         }
 
-        .tips ul{
-            padding-left:20px;
+        .tips ul {
+            padding-left: 20px;
         }
 
-        .tips li{
-            margin-bottom:12px;
-            line-height:28px;
+        .tips li {
+            margin-bottom: 12px;
+            line-height: 28px;
         }
 
-        .btn{
-            display:inline-block;
-            margin-top:30px;
-            padding:14px 25px;
-            background:#0077b6;
-            color:white;
-            text-decoration:none;
-            border-radius:10px;
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 25px;
+            background: #0077b6;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
         }
 
-        .btn:hover{
-            background:#005b8d;
+        .btn:hover {
+            background: #005b8d;
         }
 
-        footer{
-            margin-top:40px;
-            background:#0077b6;
-            color:white;
-            text-align:center;
-            padding:20px;
+        footer {
+            margin-top: 40px;
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
     </style>
 
@@ -136,93 +136,94 @@
 
 <body>
 
-<div class="navbar">
+    <div class="navbar">
 
-    <h2>🚗 KENGGEMOTI Racing Team</h2>
+        <h2>🚗 KENGGEMOTI Racing Team</h2>
 
-    <a href="../blog.php">⬅ Kembali ke Blog</a>
+        <a href="../blog.php">⬅ Kembali ke Blog</a>
 
-</div>
+    </div>
 
-<div class="container">
+    <div class="container">
 
-<div class="artikel">
+        <div class="artikel">
 
-<img src="../promo_serviss.webp" alt="Promo Servis">
+            <img src="../promo_serviss.webp" alt="Promo Servis">
 
-<div class="isi">
+            <div class="isi">
 
-<span class="kategori">🎁 Promo</span>
+                <span class="kategori">🎁 Promo</span>
 
-<h1 class="judul">Promo Servis Bulan Ini</h1>
+                <h1 class="judul">Promo Servis Bulan Ini</h1>
 
-<p class="info">
-Dipublikasikan: 5 Juli 2026 |
-Penulis: Admin KENGGEMOTI Racing Team
-</p>
+                <p class="info">
+                    Dipublikasikan: 5 Juli 2026 |
+                    Penulis: Admin KENGGEMOTI Racing Team
+                </p>
 
-<p>
+                <p>
 
-KENGGEMOTI Racing Team menghadirkan promo spesial untuk seluruh pelanggan.
-Pada bulan ini kami memberikan potongan harga hingga <b>20%</b> untuk beberapa layanan servis pilihan.
+                    KENGGEMOTI Racing Team menghadirkan promo spesial untuk seluruh pelanggan.
+                    Pada bulan ini kami memberikan potongan harga hingga <b>20%</b> untuk beberapa layanan servis pilihan.
 
-</p>
+                </p>
 
-<p>
+                <p>
 
-Promo ini bertujuan membantu pelanggan agar tetap rutin melakukan perawatan kendaraan tanpa perlu mengeluarkan biaya yang besar.
-Motor yang dirawat secara berkala akan lebih nyaman digunakan, irit bahan bakar, dan memiliki usia pakai yang lebih lama.
+                    Promo ini bertujuan membantu pelanggan agar tetap rutin melakukan perawatan kendaraan tanpa perlu mengeluarkan biaya yang besar.
+                    Motor yang dirawat secara berkala akan lebih nyaman digunakan, irit bahan bakar, dan memiliki usia pakai yang lebih lama.
 
-</p>
+                </p>
 
-<p>
+                <p>
 
-Selain diskon servis, pelanggan juga mendapatkan pemeriksaan mesin secara gratis yang meliputi pengecekan oli, sistem pengereman, kondisi ban, rantai, aki, dan komponen penting lainnya.
+                    Selain diskon servis, pelanggan juga mendapatkan pemeriksaan mesin secara gratis yang meliputi pengecekan oli, sistem pengereman, kondisi ban, rantai, aki, dan komponen penting lainnya.
 
-</p>
+                </p>
 
-<div class="tips">
+                <div class="tips">
 
-<h3>🎉 Promo yang Bisa Didapatkan</h3>
+                    <h3>🎉 Promo yang Bisa Didapatkan</h3>
 
-<ul>
+                    <ul>
 
-<li>✅ Diskon Servis Berkala hingga 20%</li>
+                        <li>✅ Diskon Servis Berkala hingga 20%</li>
 
-<li>✅ Gratis Pemeriksaan Mesin</li>
+                        <li>✅ Gratis Pemeriksaan Mesin</li>
 
-<li>✅ Diskon Penggantian Oli Pilihan</li>
+                        <li>✅ Diskon Penggantian Oli Pilihan</li>
 
-<li>✅ Potongan Harga Sparepart Tertentu</li>
+                        <li>✅ Potongan Harga Sparepart Tertentu</li>
 
-<li>✅ Konsultasi Gratis dengan Mekanik Profesional</li>
+                        <li>✅ Konsultasi Gratis dengan Mekanik Profesional</li>
 
-</ul>
+                    </ul>
 
-</div>
+                </div>
 
-<p>
+                <p>
 
-Promo berlaku selama persediaan masih ada dan dapat berubah sewaktu-waktu.
-Segera lakukan booking servis agar tidak kehabisan kuota promo.
+                    Promo berlaku selama persediaan masih ada dan dapat berubah sewaktu-waktu.
+                    Segera lakukan booking servis agar tidak kehabisan kuota promo.
 
-</p>
+                </p>
 
-<a href="../booking.php" class="btn">
-📅 Booking Servis Sekarang
-</a>
+                <a href="../booking.php" class="btn">
+                    📅 Booking Servis Sekarang
+                </a>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<footer>
+    <footer>
 
-© 2026 KENGGEMOTI Racing Team
+        © 2026 KENGGEMOTI Racing Team
 
-</footer>
+    </footer>
 
 </body>
+
 </html>

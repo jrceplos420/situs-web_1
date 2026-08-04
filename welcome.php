@@ -815,8 +815,6 @@ session_start();
 
             <li><a href="blog.php">Blog</a></li>
 
-            <li><a href="#tentang">Tentang</a></li>
-
             <li><a href="#lokasi">Lokasi</a></li>
 
             <li><a href="login_customer.php">Login Customer</a></li>
@@ -878,7 +876,7 @@ session_start();
 
             <div class="card">
 
-                <img src="servis mesin motor.jpg">
+                <img src="assets/img/servis mesin motor.jpg">
 
                 <h3>Servis Mesin</h3>
 
@@ -894,7 +892,7 @@ session_start();
 
             <div class="card">
 
-                <img src="ganti oli.webp">
+                <img src="assets/img/ganti oli.webp">
 
                 <h3>Ganti Oli</h3>
 
@@ -910,7 +908,7 @@ session_start();
 
             <div class="card">
 
-                <img src="servis cvt.jpg">
+                <img src="assets/img/servis cvt.jpg">
 
                 <h3>Servis CVT</h3>
 
@@ -1168,7 +1166,7 @@ session_start();
 
                 <img src="gambar/pelanggan2.jpg">
 
-                <h3>Andi Saputra</h3>
+                <h3>Liwa Casper</h3>
 
                 <div class="bintang">
                     ⭐⭐⭐⭐⭐
@@ -1187,7 +1185,7 @@ session_start();
 
                 <img src="gambar/pelanggan1.jpg">
 
-                <h3>Rina Putri</h3>
+                <h3>Putri Lestari A</h3>
 
                 <div class="bintang">
                     ⭐⭐⭐⭐⭐
@@ -1206,7 +1204,7 @@ session_start();
 
                 <img src="gambar/pelanggan3.jpg">
 
-                <h3>Budi Santoso</h3>
+                <h3>Zekyyy</h3>
 
                 <div class="bintang">
                     ⭐⭐⭐⭐⭐
